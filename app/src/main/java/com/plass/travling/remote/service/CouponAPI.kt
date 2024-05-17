@@ -17,4 +17,5 @@ interface CouponAPI {
         @Path("location") location: String
     ): BaseResponse<List<CouponResponse>>
 
+
 }

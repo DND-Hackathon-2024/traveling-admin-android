@@ -54,9 +54,7 @@ class MainActivity : ComponentActivity() {
             val coroutineScope = rememberCoroutineScope()
             val navHostController = rememberNavController()
             var navItems by remember { mutableStateOf(listOf(
-                BottomNavItem(NavRoot.HOME, true, R.drawable.ic_home),
                 BottomNavItem("nfc", false, R.drawable.ic_nfc),
-                BottomNavItem(NavRoot.LOCATE, false, R.drawable.ic_locate),
             )) }
 
             var isShowBottomNavigationBar by remember { mutableStateOf(true) }
@@ -70,7 +68,6 @@ class MainActivity : ComponentActivity() {
             var isShowNfcDialog by remember { mutableStateOf(false) }
 
             TravelingTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -85,7 +82,7 @@ class MainActivity : ComponentActivity() {
                                 }
                             },
                             onClickConfirm = {
-
+                                
                             }
                         )
                     }

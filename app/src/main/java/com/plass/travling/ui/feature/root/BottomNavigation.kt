@@ -69,8 +69,8 @@ fun BottomNavigation(
                 if (item.title == "nfc"){
                     Box(
                         modifier = Modifier
-                            .offset(y = (-10).dp)
-                            .size(44.dp)
+                            .offset(y = (-12).dp)
+                            .size(48.dp)
                             .background(
                                 color = TravelingTheme.colorScheme.Blue,
                                 shape = RoundedCornerShape(49.dp)
