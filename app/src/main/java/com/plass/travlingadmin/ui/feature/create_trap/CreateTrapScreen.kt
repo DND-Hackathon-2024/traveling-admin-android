@@ -21,6 +21,7 @@ import com.plass.travlingadmin.remote.request.CreateTrapRequest
 import com.plass.travlingadmin.ui.component.TVCTAButton
 import com.plass.travlingadmin.ui.component.TVTextField
 import com.plass.travlingadmin.ui.component.TVTopAppBar
+import com.plass.travlingadmin.ui.feature.root.NavRoot
 import com.plass.travlingadmin.ui.theme.TravelingTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,7 +29,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun CreateTrapScreen(
     navController: NavController,
-    hideBottomNav: () -> Unit
+    couponId: Int,
+    hideBottomNav: () -> Unit,
 ) {
 
     val coroutine = rememberCoroutineScope()
@@ -48,11 +50,18 @@ fun CreateTrapScreen(
                     placeName = placeName,
                     placeDesc = placeDesc,
                     address = address,
-                    couponId = 1,
+                    couponId = couponId,
                     imgUrl = ""
                 )
                 val response = RetrofitBuilder.getPlaceApi().createTrap(request)
                 return@runCatching response
+            }.onSuccess {
+                coroutine.launch(Dispatchers.Main) {
+                    while (navController.popBackStack()) {
+
+                    }
+                    navController.navigate(NavRoot.HOME)
+                }
             }.onFailure { }
         }
     }

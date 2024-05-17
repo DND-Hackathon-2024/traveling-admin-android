@@ -17,11 +17,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.plass.travlingadmin.local.SharedPreferencesManager
 import com.plass.travlingadmin.ui.feature.create_coupon.CreateCouponScreen
+import com.plass.travlingadmin.ui.feature.create_trap.CreateTrapScreen
 import com.plass.travlingadmin.ui.feature.home.HomeScreen
 import com.plass.travlingadmin.ui.feature.join.JoinScreen
 import com.plass.travlingadmin.ui.feature.locate.LocateScreen
@@ -154,6 +157,21 @@ class MainActivity : ComponentActivity() {
                                     changeBottomNav(false)
                                 }
                             }
+                            composable(
+                                route = "${NavRoot.CREATE_TRAP}/{id}",
+                                arguments = listOf(navArgument("id") {
+                                    type = NavType.IntType
+                                    nullable = false
+                                })
+                            ) { entry ->
+                                val id = entry.arguments?.getInt("id", 0) ?: 0
+                                CreateTrapScreen(
+                                    navController = navHostController,
+                                    couponId = id
+                                ) {
+                                    changeBottomNav(false)
+                                }
+                            }
                         }
                     }
                 }
@@ -162,7 +180,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun getStartDestination(): String {
-        val token = SharedPreferencesManager.get("token")?: ""
+        val token = SharedPreferencesManager.get("token") ?: ""
         return if (token.isEmpty()) NavRoot.LOGIN else NavRoot.HOME
     }
 

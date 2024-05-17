@@ -21,6 +21,7 @@ import com.plass.travlingadmin.remote.request.CreateTrapRequest
 import com.plass.travlingadmin.ui.component.TVCTAButton
 import com.plass.travlingadmin.ui.component.TVTextField
 import com.plass.travlingadmin.ui.component.TVTopAppBar
+import com.plass.travlingadmin.ui.feature.root.NavRoot
 import com.plass.travlingadmin.ui.theme.TravelingTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -50,8 +51,12 @@ fun CreateCouponScreen(
                     location = location,
                     couponDiscount = discount
                 )
-                val response = RetrofitBuilder.getCouponApi().createCoupon(request)
+                val response = RetrofitBuilder.getCouponApi().createCoupon(request).data
                 return@runCatching response
+            }.onSuccess {
+                coroutine.launch(Dispatchers.Main) {
+                    navController.navigate("${NavRoot.CREATE_TRAP}/${it.couponId}")
+                }
             }.onFailure { }
         }
     }
