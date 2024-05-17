@@ -118,7 +118,6 @@ fun NfcTagDialog(
                 painter = painterResource(id = R.drawable.ic_nfc_real),
                 contentDescription = "NFC 사진"
             )
-
         }
     }
 }

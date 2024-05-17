@@ -36,7 +36,7 @@ fun HomeScreen(
     LaunchedEffect(Unit) {
         showBottomNav()
         kotlin.runCatching {
-            return@runCatching RetrofitBuilder.getPlaceApi().getPlaceList().data
+            return@runCatching RetrofitBuilder.getPlaceApi().getTraps().data
         }.onSuccess {
             placeList = it
         }.onFailure {

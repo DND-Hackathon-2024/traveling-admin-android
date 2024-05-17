@@ -21,6 +21,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.plass.travlingadmin.local.SharedPreferencesManager
+import com.plass.travlingadmin.ui.feature.create_coupon.CreateCouponScreen
 import com.plass.travlingadmin.ui.feature.home.HomeScreen
 import com.plass.travlingadmin.ui.feature.join.JoinScreen
 import com.plass.travlingadmin.ui.feature.locate.LocateScreen
@@ -120,7 +121,7 @@ class MainActivity : ComponentActivity() {
                         NavHost(
                             modifier = Modifier.padding(it),
                             navController = navHostController,
-                            startDestination = getStartDestination()
+                            startDestination = NavRoot.CREATE_COUPON
                         ) {
 
                             composable(NavRoot.NFC_WRITE) {
@@ -146,6 +147,11 @@ class MainActivity : ComponentActivity() {
                             composable(NavRoot.HOME) {
                                 HomeScreen(navController = navHostController) {
                                     changeBottomNav(true)
+                                }
+                            }
+                            composable(NavRoot.CREATE_COUPON) {
+                                CreateCouponScreen(navController = navHostController) {
+                                    changeBottomNav(false)
                                 }
                             }
                         }

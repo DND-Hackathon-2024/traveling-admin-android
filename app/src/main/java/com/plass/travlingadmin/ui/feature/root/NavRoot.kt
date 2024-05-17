@@ -10,4 +10,5 @@ object NavRoot {
     const val HOME = "HOME"
 
     const val TAGGING_SUCCESS = "TAGGING_"
+    const val CREATE_COUPON = "CREA"
 }
