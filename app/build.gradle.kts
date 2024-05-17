@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.plass.travling"
+    namespace = "com.plass.travlingadmin"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.plass.travling"
+        applicationId = "com.plass.travlingadmin"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
@@ -71,5 +71,6 @@ dependencies {
     implementation(libs.androidx.navigation)
 
     implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
     implementation(libs.coil)
 }
