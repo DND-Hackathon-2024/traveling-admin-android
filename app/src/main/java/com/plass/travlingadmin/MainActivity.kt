@@ -124,7 +124,7 @@ class MainActivity : ComponentActivity() {
                         NavHost(
                             modifier = Modifier.padding(it),
                             navController = navHostController,
-                            startDestination = NavRoot.CREATE_COUPON
+                            startDestination = getStartDestination()
                         ) {
 
                             composable(NavRoot.NFC_WRITE) {
