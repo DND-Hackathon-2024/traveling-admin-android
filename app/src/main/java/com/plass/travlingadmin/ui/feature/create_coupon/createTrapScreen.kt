@@ -29,7 +29,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun CreateCouponScreen(
     navController: NavController,
-    hideBottomNav: () -> Unit
+    hideBottomNav: () -> Unit,
+
 ) {
 
     val coroutine = rememberCoroutineScope()

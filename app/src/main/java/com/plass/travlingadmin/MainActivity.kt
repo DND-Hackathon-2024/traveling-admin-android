@@ -86,11 +86,11 @@ class MainActivity : ComponentActivity() {
                                     isShowNfcDialog = false
                                 }
                             },
-                            onClickConfirm = {
+                            onSuccess = {
                                 coroutineScope.launch {
                                     isShowNfcDialog = false
                                     changeBottomNav(false)
-                                    navHostController.navigate(NavRoot.TAGGING_SUCCESS)
+                                    navHostController.navigate("${NavRoot.CREATE_COUPON}/${it}")
                                 }
                             }
                         )
@@ -152,7 +152,16 @@ class MainActivity : ComponentActivity() {
                                     changeBottomNav(true)
                                 }
                             }
-                            composable(NavRoot.CREATE_COUPON) {
+                            composable(
+                                route = "${NavRoot.CREATE_COUPON}/{data}",
+                                arguments = listOf(
+                                    navArgument("data") {
+                                        type = NavType.StringType
+                                        nullable = false
+                                    }
+                                )
+                            ) { entry ->
+                                val data = entry.arguments?.getString("data")?: ""
                                 CreateCouponScreen(navController = navHostController) {
                                     changeBottomNav(false)
                                 }

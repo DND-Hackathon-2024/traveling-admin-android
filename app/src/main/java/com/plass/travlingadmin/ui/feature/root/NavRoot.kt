@@ -9,7 +9,6 @@ object NavRoot {
     const val JOIN = "JOIN"
     const val HOME = "HOME"
 
-    const val TAGGING_SUCCESS = "TAGGING_"
     const val CREATE_COUPON = "CREA"
     const val CREATE_TRAP = "CREA_T"
 }
