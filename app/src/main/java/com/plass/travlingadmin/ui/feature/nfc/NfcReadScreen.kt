@@ -18,7 +18,6 @@ import com.plass.travlingadmin.MainActivity
 import com.plass.travlingadmin.utiles.showShortToast
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalStdlibApi::class)
 @Composable
 fun NfcReadScreen(
     navController: NavController,

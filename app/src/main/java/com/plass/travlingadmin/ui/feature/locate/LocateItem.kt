@@ -21,6 +21,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.plass.travlingadmin.R
+import com.plass.travlingadmin.remote.response.CouponResponse
+import com.plass.travlingadmin.ui.component.Coupon
 import com.plass.travlingadmin.ui.component.rippleClickable
 import com.plass.travlingadmin.ui.theme.TravelingTheme
 
@@ -78,11 +80,10 @@ fun LocateItem(
                     colorFilter = ColorFilter.tint(TravelingTheme.colorScheme.Gray98)
                 )
                 Text(
-                    text = (if (like > 99) 99 else like).toString(),
+                    text = (if (like > 99) "99+" else like).toString(),
                     style = TravelingTheme.typography.labelRegular,
                     color = TravelingTheme.colorScheme.Gray98
                 )
-
             }
             Spacer(modifier = Modifier.height(8.dp))
         }

@@ -7,9 +7,9 @@ import com.plass.travlingadmin.TravelingApplication
 object SharedPreferencesManager {
     private var instance: SharedPreferences? = null
 
-    fun getInstance(): SharedPreferences {
+    private fun getInstance(): SharedPreferences {
         if (instance == null) {
-            instance = TravelingApplication().getSharedPreferences("traveling", MODE_PRIVATE)
+            instance = TravelingApplication.context?.getSharedPreferences("traveling", MODE_PRIVATE)
         }
         return instance!!
     }

@@ -22,10 +22,10 @@ import com.plass.travlingadmin.ui.theme.TravelingTheme
 fun LocateScreen(
     navController: NavController
 ) {
-    val testItems = listOf(
-        LocateModel("대구소프트웨어 체육관 어딘가", 200, 5, "https://i.namu.wiki/i/7ivconN-POEZUVREF3kHCQo5C7Dhfc_KlSX6BbvJm4TXL8QQ-R5p-2AEvXV_gHZ4nFzzeGIx7ZbDyvMaOvu9dA.webp"),
-        LocateModel("대구소프트웨어 체육관 어딘가", 200, 5, "https://i.namu.wiki/i/7ivconN-POEZUVREF3kHCQo5C7Dhfc_KlSX6BbvJm4TXL8QQ-R5p-2AEvXV_gHZ4nFzzeGIx7ZbDyvMaOvu9dA.webp"),
-    )
+//    val testItems = listOf(
+//        LocateModel("대구소프트웨어 체육관 어딘가", 200, 5, "https://i.namu.wiki/i/7ivconN-POEZUVREF3kHCQo5C7Dhfc_KlSX6BbvJm4TXL8QQ-R5p-2AEvXV_gHZ4nFzzeGIx7ZbDyvMaOvu9dA.webp"),
+//        LocateModel("대구소프트웨어 체육관 어딘가", 200, 5, "https://i.namu.wiki/i/7ivconN-POEZUVREF3kHCQo5C7Dhfc_KlSX6BbvJm4TXL8QQ-R5p-2AEvXV_gHZ4nFzzeGIx7ZbDyvMaOvu9dA.webp"),
+//    )
 
     val testItems2 = listOf(
         LocateModel("종로고택점 스타벅스 남자화장실 어딘가", 10, 2, "https://i.namu.wiki/i/7ivconN-POEZUVREF3kHCQo5C7Dhfc_KlSX6BbvJm4TXL8QQ-R5p-2AEvXV_gHZ4nFzzeGIx7ZbDyvMaOvu9dA.webp"),
@@ -69,21 +69,21 @@ fun LocateScreen(
                     color = TravelingTheme.colorScheme.Black
                 )
             }
-            items(testItems) {
-                LocateItem(
-                    locate = it.locate,
-                    image = it.image,
-                    distance = it.distance,
-                    like = it.like
-                ) {
-
-                }
-                Divider(
-                    modifier = Modifier.fillMaxWidth(),
-                    thickness = 1.dp,
-                    color = Color(0xFFF4F5F9)
-                )
-            }
+//            items(testItems) {
+//                LocateItem(
+//                    locate = it.locate,
+//                    image = it.image,
+//                    distance = it.distance,
+//                    like = it.like
+//                ) {
+//
+//                }
+//                Divider(
+//                    modifier = Modifier.fillMaxWidth(),
+//                    thickness = 1.dp,
+//                    color = Color(0xFFF4F5F9)
+//                )
+//            }
             item {
                 Text(
                     modifier = Modifier.padding(

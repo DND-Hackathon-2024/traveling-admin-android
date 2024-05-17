@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.plass.travlingadmin.local.SharedPreferencesManager
 import com.plass.travlingadmin.ui.feature.home.HomeScreen
 import com.plass.travlingadmin.ui.feature.join.JoinScreen
 import com.plass.travlingadmin.ui.feature.locate.LocateScreen
@@ -119,7 +120,7 @@ class MainActivity : ComponentActivity() {
                         NavHost(
                             modifier = Modifier.padding(it),
                             navController = navHostController,
-                            startDestination = NavRoot.HOME
+                            startDestination = getStartDestination()
                         ) {
 
                             composable(NavRoot.NFC_WRITE) {
@@ -143,7 +144,9 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
                             composable(NavRoot.HOME) {
-                                HomeScreen(navController = navHostController)
+                                HomeScreen(navController = navHostController) {
+                                    changeBottomNav(true)
+                                }
                             }
                         }
                     }
@@ -152,6 +155,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    private fun getStartDestination(): String {
+        val token = SharedPreferencesManager.get("token")?: ""
+        return if (token.isEmpty()) NavRoot.LOGIN else NavRoot.HOME
+    }
 
     fun getNfcAdapter(): NfcAdapter = nfcAdapter
 }

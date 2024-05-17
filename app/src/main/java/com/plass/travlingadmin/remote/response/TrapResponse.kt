@@ -2,7 +2,7 @@ package com.plass.travlingadmin.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class PlaceResponse(
+data class TrapResponse(
     @SerializedName("id")
     val id: Int,
     @SerializedName("placeName")
