@@ -47,7 +47,6 @@ fun NfcReadScreen(
                         sendMessage(String(record.payload))
                     }
                 } catch (e: Exception) {
-                    sendMessage("(0) ${e.message.toString()}")
                     Log.i("writeError", e.message.toString());
                 }},
             NfcAdapter.FLAG_READER_NFC_A

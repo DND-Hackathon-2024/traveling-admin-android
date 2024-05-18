@@ -4,8 +4,8 @@ data class CouponResponse(
     val couponId: Int,
     val code: String,
     val couponName: String,
-    val description: String,
-    val location: String,
+    val couponDescription: String,
+    val couponLocation: String,
     val couponDiscount: String,
     val couponCreateUserName: String
 )

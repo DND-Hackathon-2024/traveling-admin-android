@@ -94,7 +94,14 @@ fun HomeScreen(
                 }
             } else {
                 items(placeList) {
-                    LocateItem(locate = it.placeName, image = it.imgUrl, distance = 3, like = 3) {
+                    LocateItem(
+
+                        locate = it.placeName,
+                        image = it.imgUrl,
+                        distance = 3,
+                        like = 3,
+                        coupon = it.couponId
+                    ) {
 
                     }
                 }

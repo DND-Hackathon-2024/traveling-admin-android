@@ -61,7 +61,7 @@ fun NfcWriteScreen(
                         sendMessage("성공")
                     }
                 } catch (e: Exception) {
-                    sendMessage("(0) ${e.message.toString()}")
+//                    sendMessage("(0) ${e.message.toString()}")
                     Log.i("writeError", e.message.toString());
                 }},
             NfcAdapter.FLAG_READER_NFC_A

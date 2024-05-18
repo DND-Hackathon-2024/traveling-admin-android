@@ -12,7 +12,7 @@ data class TrapResponse(
     @SerializedName("address")
     val address: String,
     @SerializedName("couponId")
-    val couponId: Int,
+    val couponId: CouponResponse,
     @SerializedName("imgUrl")
     val imgUrl: String
 )

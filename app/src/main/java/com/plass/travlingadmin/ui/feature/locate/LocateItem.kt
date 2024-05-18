@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -102,6 +103,7 @@ fun LocateItem(
 ) {
     Box(
         modifier = Modifier
+            .padding(bottom = 12.dp)
             .rippleClickable(onClick = onClickItem)
     ) {
         Column(
@@ -152,7 +154,14 @@ fun LocateItem(
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))
-            Coupon(title = "${coupon.couponDiscount} 할인 쿠폰", description = coupon.description, category = coupon.location)
+            Coupon(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(end = 8.dp),
+                title = "${coupon.couponDiscount} 할인 쿠폰",
+                description = coupon.couponDescription,
+                category = coupon.couponLocation
+            )
         }
     }
 }

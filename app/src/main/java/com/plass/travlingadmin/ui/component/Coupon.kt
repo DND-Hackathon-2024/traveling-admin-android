@@ -35,7 +35,6 @@ fun Coupon(
     Box(
         modifier = modifier
             .height(75.dp)
-
     ) {
         Row(
             modifier = Modifier
